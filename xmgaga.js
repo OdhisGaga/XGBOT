@@ -76,7 +76,7 @@ const {
   atbverifierEtatJid,
   atbrecupererActionJid
 } = require("./bdd/antibot");
-let evt = require(__dirname + "/framework/zokou");
+let evt = require(__dirname + "/midush/gaga");
 const {
   isUserBanned,
   addUserToBanList,
@@ -92,10 +92,10 @@ const {
   addGroupToOnlyAdminList,
   removeGroupFromOnlyAdminList
 } = require("./bdd/onlyAdmin");
-//const //{loadCmd}=require("/framework/mesfonctions")
+//const //{loadCmd}=require("/midush/mesfonctions")
 let {
   reagir
-} = require(__dirname + "/framework/app");
+} = require(__dirname + "/midush/app");
 var session = conf.session.replace(/GAGA-MD;;;=>/g, "");
 const prefixe = conf.PREFIXE || [];
 
@@ -510,8 +510,8 @@ let lastReactionTime = 0;
           }
 
           // Check if bot user ID is available
-          const zokou = zk.user && zk.user.id ? zk.user.id.split(":")[0] + "@s.whatsapp.net" : null;
-          if (!zokou) {
+          const gaga = zk.user && zk.user.id ? zk.user.id.split(":")[0] + "@s.whatsapp.net" : null;
+          if (!gaga) {
             console.log("Bot's user ID not available. Skipping reaction.");
             continue;
           }
@@ -1164,7 +1164,7 @@ if (texte && texte.startsWith('>')) {
 
       //execution des commandes   
       if (verifCom) {
-        const cd = evt.cm.find(zokou => zokou.nomCom === com || zokou.nomCom === com || zokou.aliases && zokou.aliases.includes(com));
+        const cd = evt.cm.find(gaga => gaga.nomCom === com || gaga.nomCom === com || gaga.aliases && gaga.aliases.includes(com));
         if (cd) {
           try {
             if (conf.MODE.toLocaleLowerCase() != 'yes' && !superUser) {
