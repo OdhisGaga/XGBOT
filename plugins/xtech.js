@@ -3,8 +3,8 @@
 const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios');
-const { zokou } = require(__dirname + "/../framework/zokou");
-const { format } = require(__dirname + "/../framework/mesfonctions");
+const { gaga } = require(__dirname + "/../midush/gaga");
+const { format } = require(__dirname + "/../midush/mesfonction");
 const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
@@ -28,7 +28,7 @@ const runtime = function (seconds) {
 // Function to fetch GitHub repo data
 const fetchGitHubStats = async () => {
     try {
-        const repo = 'Richgagamidush/XG-MD'; // Replace with your repo
+        const repo = 'OdhisGaga/XGBOT'; // Replace with your repo
         const response = await axios.get(`https://api.github.com/repos/${repo}`);
         const forks = response.data.forks_count;
         const stars = response.data.stargazers_count;
@@ -44,7 +44,7 @@ const fetchGitHubStats = async () => {
     }
 };
 
-zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
+gaga({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage } = commandeOptions;
     let { cm } = require(__dirname + "/../framework/zokou");
     var coms = {};
@@ -151,7 +151,7 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
     }
 });
 
-zokou({ nomCom: "list", categorie: "General" }, async (dest, zk, commandeOptions) => {
+gaga({ nomCom: "list", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage } = commandeOptions;
     let { cm } = require(__dirname + "/../framework/zokou");
     var coms = {};
