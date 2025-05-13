@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const { zokou } = require("../framework/zokou");
+const { gaga } = require("../midush/gaga");
 
-zokou(
+gaga(
   { nomCom: "ping", reaction: "✈️", nomFichier: __filename },
   async (dest, zk, commandeOptions) => {
     console.log("Ping command triggered!");
