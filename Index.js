@@ -38,14 +38,14 @@ let fs = require("fs-extra");
 let path = require("path");
 const FileType = require('file-type');
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-const { verifierEtatJid, recupererActionJid } = require("./bdd/antilien");
-const { atbverifierEtatJid, atbrecupererActionJid } = require("./bdd/antibot");
-let evt = require(__dirname + "/framework/zokou");
-const { isUserBanned, addUserToBanList, removeUserFromBanList } = require("./bdd/banUser");
-const { addGroupToBanList, isGroupBanned, removeGroupFromBanList } = require("./bdd/banGroup");
-const { isGroupOnlyAdmin, addGroupToOnlyAdminList, removeGroupFromOnlyAdminList } = require("./bdd/onlyAdmin");
-let { reagir } = require(__dirname + "/framework/app");
-var session = conf.session.replace(/Toxic-MD-WHATSAPP-BOT;;;=>/g, "");
+const { verifierEtatJid, recupererActionJid } = require("./Assets/antilien");
+const { atbverifierEtatJid, atbrecupererActionJid } = require("./Assets/antibot");
+let evt = require(__dirname + "/midush/gaga");
+const { isUserBanned, addUserToBanList, removeUserFromBanList } = require("./Assets/banUser");
+const { addGroupToBanList, isGroupBanned, removeGroupFromBanList } = require("./Assets/banGroup");
+const { isGroupOnlyAdmin, addGroupToOnlyAdminList, removeGroupFromOnlyAdminList } = require("./Assets/onlyAdmin");
+let { reagir } = require(__dirname + "/midush/app");
+var session = conf.session.replace(/GAGA-MD-WHATSAPP-BOT;;;=>/g, "");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206);
 const readmore = more.repeat(4001);
@@ -74,7 +74,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Toxic-MD', "Safari"],
+            browser: ['GAGA-MD', "Safari"],
             printQRInTerminal: true,
             markOnlineOnConnect: false,
             auth: {
@@ -134,7 +134,7 @@ setTimeout(() => {
             var membreGroupe = verifGroupe ? ms.key.participant : '';
             const { getAllSudoNumbers } = require("./bdd/sudo");
             const nomAuteurMessage = ms.pushName;
-            const dj = '254735342808';
+            const dj = '254112291443';
             const dj2 = '254799283147';
             const sudo = await getAllSudoNumbers();
             const superUserNumbers = [servBot, dj, dj2, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
@@ -369,7 +369,7 @@ if (ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf
             
  //---------------------------------------rang-count--------------------------------
              if (texte && auteurMessage.endsWith("s.whatsapp.net")) {
-  const { ajouterOuMettreAJourUserData } = require("./bdd/level"); 
+  const { ajouterOuMettreAJourUserData } = require("./Assets/level"); 
   try {
     await ajouterOuMettreAJourUserData(auteurMessage);
   } catch (e) {
@@ -389,7 +389,7 @@ if (ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf
             
                     if(superUser) {console.log('hummm') ; return ;} 
                     
-                    let mbd = require('./bdd/mention') ;
+                    let mbd = require('./Assets/mention') ;
             
                     let alldata = await mbd.recupererToutesLesValeurs() ;
             
@@ -482,7 +482,7 @@ try {
     };
     const gifLink = "https://raw.githubusercontent.com/xhclintohn/Toxic-MD/main/media/remover.gif";
     const sticker = new Sticker(gifLink, {
-      pack: '𝐓𝐎𝐗𝐈𝐂-𝐌𝐃',
+      pack: 'GAGA MD',
       author: conf.OWNER_NAME,
       type: StickerTypes.FULL,
       categories: ['⚠️'],
@@ -784,7 +784,7 @@ zk.ev.on('group-participants.update', async (group) => {
         
     async  function activateCrons() {
         const cron = require('node-cron');
-        const { getCron } = require('./bdd/cron');
+        const { getCron } = require('./Assets/cron');
 
           let crons = await getCron();
           console.log(crons);
@@ -864,15 +864,15 @@ zk.ev.on('group-participants.update', async (group) => {
                 console.log("Toxic MD is Online ✅\n\n");
                 //chargement des clintplugins 
                 console.log("Loading Toxic Commands ...\n");
-                fs.readdirSync(__dirname + "/clintplugins").forEach((fichier) => {
+                fs.readdirSync(__dirname + "/plugins").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
-                            require(__dirname + "/clintplugins/" + fichier);
+                            require(__dirname + "/plugins/" + fichier);
                             console.log(fichier + " Installed Successfully✔️");
                         }
                         catch (e) {
                             console.log(`${fichier} could not be installed due to : ${e}`);
-                        } /* require(__dirname + "/xh_clinton/" + fichier);
+                        } /* require(__dirname + "/plugins/" + fichier);
                          console.log(fichier + " Installed ✔️")*/
                         (0, baileys_1.delay)(300);
                     }
