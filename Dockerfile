@@ -9,7 +9,7 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN  git clone https://github.com/Keithkeizzah/KEITH-MD  /root/Gaga_BOt
+RUN  git clone https://github.com/OdhisGaga/XGBOT  /root/Gaga_BOt
 WORKDIR /root/Gaga_Bot/
 
 
