@@ -1,4 +1,4 @@
-const { zokou } = require('../framework/zokou');
+const { gaga } = require('../midush/gaga');
 const Heroku = require('heroku-client');
 const s = require("../set");
 const axios = require("axios");
@@ -6,8 +6,8 @@ const speed = require("performance-now");
 const { exec } = require("child_process");
 const conf = require(__dirname + "/../set");
 
-zokou({
-  nomCom: 'redoploy',
+gaga({
+  nomCom: 'sync',
   aliases: ['update', 'sync'],
   categorie: "system"
 }, async (chatId, zk, context) => {
@@ -35,7 +35,7 @@ zokou({
         `https://api.heroku.com/apps/${herokuAppName}/builds`,
         {
           source_blob: {
-            url: "https://github.com/richgagamidush/XG-M/tree/main",
+            url: "https://github.com/OdhisGaga/XGBOT/tree/main",
           },
         },
         {
