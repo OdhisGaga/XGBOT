@@ -7,7 +7,7 @@
     "baileys",
     "whatsapp"
   ],
-  "logo": "https://files.catbox.moe/oznlsw.jpg",
+  "logo": "https://files.catbox.moe/sfk02i.jpg",
   "repository": "https://github.com/OdhisGaga/XGBOT",
   "succes_url": "/",
   "stack": "container",
@@ -99,7 +99,7 @@
     },
     "URL": {
       "description": "you must add your bot image url.Get your image url now and fill it here",
-      "value": "https://files.catbox.moe/oznlsw.jpg",
+      "value": "https://files.catbox.moe/sfk02i.jpg",
       "required": true
     },
     "AUTO_READ_MESSAGES": {
