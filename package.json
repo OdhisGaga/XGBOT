@@ -6,8 +6,8 @@
   "scripts": {
     "test": "node xgaga.js",
     "s": "node xgaga.js",
-    "toshtech": "pm2 start xgaga.js --attach",
-    "toshtech": "pm2 start xgaga.js --attach",
+    "gagatech": "pm2 start xgaga.js --attach",
+    "gagatech": "pm2 start xgaga.js --attach",
     "c": "tsc"
   },
   "keywords": [
