@@ -96,7 +96,7 @@ const {
 let {
   reagir
 } = require(__dirname + "/midush/app");
-var session = conf.session.replace(/GAGA-MD;;;=>/g, "");
+var session = conf.session.replace(/Ӽɢǟɢǟ€€>ӼɮօȶGAGA-MD;;;=>, "");
 const prefixe = conf.PREFIXE || [];
 
 require('dotenv').config({
